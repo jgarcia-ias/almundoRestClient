@@ -25,31 +25,23 @@ export class HotelFormComponent implements OnInit {
   ) {
     this.form = formBuilder.group({
       name: ['', [
-        Validators.required,
-        Validators.minLength(3)
+        Validators.required
       ]],
       stars: ['', [
-        Validators.required,
-        Validators.minLength(3)
+        Validators.required
       ]],
       price: ['', [
-        Validators.required,
-        Validators.minLength(3)
+        Validators.required
       ]],
       images: ['', [
-        Validators.required,
-        Validators.minLength(3)
-      ]],
-      amenities: ['', [
-        Validators.required,
-        Validators.minLength(3)
+        Validators.required
       ]]
     });
   }
 
   ngOnInit() {
     var id = this.route.params.subscribe(params => {
-      var id = params['id'];
+      var id = params['_id'];
 
       this.title = id ? 'Edit Hotel' : 'New Hotel';
 
@@ -70,10 +62,12 @@ export class HotelFormComponent implements OnInit {
   save() {
     var result,
         hotelValue = this.form.value;
-
-    if (hotelValue.id){
+    console.log('hotelValue.id ',hotelValue.id);
+    if (hotelValue.id) {
+      console.log('update hotel');
       result = this.hotelsService.updateHotel(hotelValue);
     } else {
+      console.log('insert hotel');
       result = this.hotelsService.addHotel(hotelValue);
     }
 

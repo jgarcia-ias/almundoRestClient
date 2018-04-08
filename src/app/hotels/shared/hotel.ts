@@ -1,7 +1,7 @@
 
 
 export class Hotel {
-  _id: number;
+  _id: string;
   name: string;
   stars: string;
   price: string;

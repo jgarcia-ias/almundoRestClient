@@ -19,7 +19,7 @@ export class HotelsService {
   }
 
   getHotel(id){
-    return this.http.get(this.getUserUrl(id))
+    return this.http.get(this.getHotelUrl(id))
       .map(res => res.json());
   }
 
@@ -29,16 +29,16 @@ export class HotelsService {
   }
 
   updateHotel(hotel){
-    return this.http.put(this.getUserUrl(hotel.id), JSON.stringify(hotel))
+    return this.http.put(this.getHotelUrl(hotel.id), JSON.stringify(hotel))
       .map(res => res.json());
   }
 
   deleteHotel(id){
-    return this.http.delete(this.getUserUrl(id))
+    return this.http.delete(this.getHotelUrl(id))
       .map(res => res.json());
   }
 
-  private getUserUrl(id){
+  private getHotelUrl(id){
     return this.url + "/" + id;
   }
 }

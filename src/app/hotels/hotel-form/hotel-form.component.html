@@ -4,27 +4,41 @@
     <div class="row">
       <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
-        <input id="name" type="text" class="validate"
-               [(ngModel)]="hotel.name" formControlName="name"
-               [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid"
-        >
-        <label for="name"
-               [class.active]="hotel.name"
-               data-error="Name is required and needs to contain at least 3 chars">
+        <input id="name" type="text" class="validate" [(ngModel)]="hotel.name" formControlName="name" [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid">
+        <label for="name" [class.active]="hotel.name" data-error="Name is required">
           Name
         </label>
       </div>
     </div>
+
     <div class="row">
       <div class="input-field col s12">
-        <i class="material-icons prefix">starts</i>
-        <input id="starts" type="starts" class="validate"
-               [(ngModel)]="hotel.starts" formControlName="starts"
-               [class.invalid]="form.controls['starts'].touched && !form.controls['starts'].valid">
-        <label for="starts"
-               [class.active]="hotel.starts"
-               data-error="Invalid starts">
+        <i class="material-icons prefix">stars</i>
+        <input id="stars" type="text" class="validate" [(ngModel)]="hotel.stars" formControlName="stars" [class.invalid]="form.controls['stars'].touched && !form.controls['stars'].valid">
+        <label for="stars" [class.active]="hotel.stars" data-error="Stars is required">
           Stars
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">euro_symbol
+          </i>
+        <input id="price" type="text" class="validate" [(ngModel)]="hotel.price" formControlName="price" [class.invalid]="form.controls['price'].touched && !form.controls['price'].valid">
+        <label for="price" [class.active]="hotel.price" data-error="price is required">
+          Price
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">picture_in_picture
+          </i>
+        <input id="images" type="text" class="validate" [(ngModel)]="hotel.images" formControlName="images" [class.invalid]="form.controls['images'].touched && !form.controls['images'].valid">
+        <label for="images" [class.active]="hotel.images" data-error="images is required">
+          Images
         </label>
       </div>
     </div>
